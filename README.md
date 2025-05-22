@@ -1,70 +1,164 @@
-# Getting Started with Create React App
+# ResumeGenie 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Resume Genie is an AI-powered web application designed to streamline and personalize interview preparation by generating customized interview questions from resumes and job descriptions. Built using Python, FastAPI, React.js,the system extracts key skills and qualifications through advanced text processing techniques. It then uses large language models (via  Gemini APIs) to create technical and behavioral questions tailored to specific roles. A multi-agent architecture built with CrewAI categorizes the questions into Easy, Medium, and Hard levels to match candidate proficiency. The project includes features like resume analysis, skill gap detection, and real-time feedback.  Designed with scalability and modularity in mind, the system provides an intelligent, efficient, and user-friendly solution for both recruiters and candidates seeking smarter, faster interview preparation.
 
-## Available Scripts
+## ✨ Key Features
 
-In the project directory, you can run:
+📄 Resume & Job Description Input: Users can upload resumes and job descriptions through a simple, user-friendly interface.
 
-### `npm start`
+📊 Resume Analysis: Compares resume content with job requirements to identify gaps and suggest improvements.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🤖 AI-Powered Question Generation: Generates customized technical and behavioral interview questions using LLMs Gemini.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🧩 Difficulty-Level Categorization: Multi-agent system classifies questions into Easy, Medium, and Hard tiers for targeted preparation.
 
-### `npm test`
+💡 Dynamic Frontend UI: Built with React.js to display questions and analysis results in a clean and interactive format.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🚀 Fast & Scalable Backend: Backend built with FastAPI to ensure quick performance and easy integration
 
-### `npm run build`
+## 🛠️ Technology Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+- **React 19** - Modern UI development
+- **Tailwind CSS** - Utility-first styling
+- **Radix UI** - Accessible components
+- **React Router** - Navigation management
+- **Firebase SDK** - Authentication & storage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
+- **FastAPI** - High-performance API framework
+- **Google Generative AI** - Advanced AI capabilities
+- **SpaCy** - Natural Language Processing
+- **Firebase Admin** - Backend services
+- **Uvicorn** - ASGI server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Getting Started
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js (v14+)
+- Python 3.8+
+- Firebase account
+- Google Cloud account
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/shivaraj245/resumegenie.git
+   cd resumegenie
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Frontend Setup**
+   ```bash
+   # Install dependencies
+   npm install
 
-## Learn More
+   # Start development server
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Backend Setup**
+   ```bash
+   # Create and activate virtual environment
+   python -m venv venv
+   source venv/bin/activate  # Windows: venv\Scripts\activate
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   # Install dependencies
+   pip install -r requirements.txt
 
-### Code Splitting
+   # Start backend server
+   cd src/backend
+   uvicorn Backend:app --reload --host 127.0.0.1 --port 8000
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. **Environment Configuration**
 
-### Analyzing the Bundle Size
+   Create a `.env` file in the root directory:
+   ```env
+   # Firebase Configuration
+   REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+   REACT_APP_FIREBASE_APP_ID=your_firebase_app_id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   # Google AI Configuration
+   GOOGLE_API_KEY=your_google_api_key
+   ```
 
-### Making a Progressive Web App
+## 📁 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+resumegenie/
+├── public/                 # Static assets
+├── src/
+│   ├── components/        # Reusable UI components
+│   ├── pages/            # Page components
+│   ├── backend/          # FastAPI application
+│   │   ├── api/         # API endpoints
+│   │   ├── models/      # Data models
+│   │   └── services/    # Business logic
+│   └── utils/           # Helper functions
+├── venv/                 # Python virtual environment
+├── .env                 # Environment variables
+├── package.json         # Frontend dependencies
+└── requirements.txt     # Backend dependencies
+```
 
-### Advanced Configuration
+## 🚀 Development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Available Scripts
 
-### Deployment
+- `npm start` - Launch development server
+- `npm run build` - Create production build
+- `npm test` - Run test suite
+- `npm run lint` - Check code quality
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Backend Development
 
-### `npm run build` fails to minify
+The backend API runs on `http://localhost:8000` with the following endpoints:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `POST /api/resume/generate` - Generate new resume
+- `GET /api/resume/{id}` - Fetch resume
+- `PUT /api/resume/{id}` - Update resume
+- `DELETE /api/resume/{id}` - Delete resume
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Code Style
+
+- Follow PEP 8 for Python code
+- Use ESLint for JavaScript/TypeScript
+- Write meaningful commit messages
+- Include tests for new features
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 💬 Support
+
+- 📧 Email: support@resumegenie.com
+- 💻 GitHub Issues: [Create an issue](https://github.com/shivaraj245/resumegenie/issues)
+- 📚 Documentation: [Wiki](https://github.com/shivaraj245/resumegenie/wiki)
+
+## 🙏 Acknowledgments
+
+- [Create React App](https://create-react-app.dev/)
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [Firebase](https://firebase.google.com/)
+- [Google AI](https://ai.google/)
+
+---
+
+Made with ❤️ by the ResumeGenie Team
