@@ -8,7 +8,7 @@ import Auth from './Auth';
 import LandingPage from './LandingPage';
 import Logo from './RG_logo.jpg'; // Import the logo
 
-const API_URL = "http://localhost:8000";
+const API_URL = process.env.REACT_APP_API_URL;
 
 // Add default responses
 const DEFAULT_RESPONSES = {
