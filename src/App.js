@@ -305,7 +305,7 @@ function Dashboard() {
         if (qualifiedSkillsSection) {
           const skillsText = qualifiedSkillsSection.split(/Missing Skills:|Skills to Develop:|Compatibility Analysis:|Analysis:/i)[0];
           const extractedSkills = skillsText
-            .split(/[•\-\*]/)
+            .split(/[•\-*]/)
             .map(skill => skill.trim())
             .filter(skill => skill && 
               !skill.toLowerCase().includes('qualified skills') && 
