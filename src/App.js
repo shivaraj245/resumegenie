@@ -317,7 +317,7 @@ function Dashboard() {
         const analysisSection = data.match_score.split(/Compatibility Analysis:|Analysis:/i)[1];
         if (analysisSection) {
           parsedMatchScore.analysis = cleanAnalysisText(analysisSection
-            .split(/[•\-\*]/)
+            .split(/[•\-*]/)
             .map(line => line.trim())
             .filter(line => line && !line.toLowerCase().includes('compatibility analysis') && !line.toLowerCase().includes('analysis'))
             .join('\n'));
